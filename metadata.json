@@ -1,0 +1,6 @@
+{
+  "name": "Test Website for Psychologists",
+  "description": "A demonstration website for psychologists and therapists modeled with a luxury wellness aesthetic",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

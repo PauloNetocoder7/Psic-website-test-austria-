@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Lato", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  
+  --color-brand-black: #0A0A0A;
+  --color-brand-charcoal: #141414;
+  --color-brand-gold: #C9A84C;
+  --color-brand-text: #E0E0E0;
+  --color-brand-muted: #888888;
+  --color-brand-border: #222222;
+  
+  --shadow-gold-glow: 0 0 15px rgba(201, 168, 76, 0.2);
+  --shadow-gold-glow-hover: 0 0 25px rgba(201, 168, 76, 0.4);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-brand-black);
+    color: var(--color-brand-text);
+  }
+  
+  body {
+    font-family: var(--font-sans);
+  }
+  
+  /* High-end minimalist scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-brand-black);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #333333;
+    border-radius: 3px;
+    transition: background 0.3s ease;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-brand-gold);
+  }
+}
+
+/* Subtle elegant luxury backdrop grain/noise */
+.luxury-noise {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Gold shimmer/glow styles */
+.gold-glow-button {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 0 0px rgba(201, 168, 76, 0);
+}
+
+.gold-glow-button:hover {
+  box-shadow: var(--shadow-gold-glow-hover);
+  border-color: var(--color-brand-gold);
+}
+
+.gold-glow-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gold-glow-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8), var(--shadow-gold-glow);
+  transform: translateY(-4px);
+  border-color: var(--color-brand-gold);
+}
+
+/* Accordion expand transitions */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease;
+}
+
+.accordion-item.active .accordion-content {
+  max-height: 300px; /* fit-content approximation */
+}
